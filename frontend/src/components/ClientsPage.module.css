@@ -1,0 +1,48 @@
+.page { display: flex; flex-direction: column; gap: 20px; }
+.header { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+.title { font-size: 22px; font-weight: 700; margin: 0; color: var(--color-text, #0f172a); }
+.subtitle { margin: 4px 0 0; color: var(--color-muted, #64748b); font-size: 14px; }
+.primaryBtn { display: inline-flex; align-items: center; gap: 6px; background: var(--color-primary, #3B82F6); color: #fff; border: none; border-radius: 10px; padding: 9px 16px; font-weight: 600; cursor: pointer; transition: opacity .15s; }
+.primaryBtn:hover { opacity: .9; }
+.primaryBtn:disabled { opacity: .6; cursor: not-allowed; }
+.secondaryBtn { background: #fff; border: 1px solid #e2e8f0; border-radius: 10px; padding: 9px 16px; cursor: pointer; }
+.card { background: #fff; border: 1px solid #e2e8f0; border-radius: 14px; box-shadow: 0 1px 3px rgba(15,23,42,.05); overflow: hidden; }
+.toolbar { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 14px 16px; border-bottom: 1px solid #f1f5f9; flex-wrap: wrap; }
+.searchWrap { position: relative; flex: 1; max-width: 360px; min-width: 200px; }
+.searchIcon { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); color: #94a3b8; }
+.searchInput { width: 100%; padding: 8px 12px 8px 32px; border: 1px solid #e2e8f0; border-radius: 10px; font-size: 14px; box-sizing: border-box; }
+.searchInput:focus { outline: 2px solid rgba(59,130,246,.3); border-color: #3B82F6; }
+.count { font-size: 12px; color: #64748b; }
+.tableWrap { overflow-x: auto; }
+.table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.table th { text-align: left; font-size: 11px; text-transform: uppercase; letter-spacing: .05em; color: #64748b; padding: 10px 16px; background: #f8fafc; }
+.table td { padding: 12px 16px; border-top: 1px solid #f1f5f9; vertical-align: middle; }
+.table tbody tr:hover { background: #f8fafc; }
+.right { text-align: right; white-space: nowrap; }
+.nameCell { display: flex; align-items: center; gap: 10px; }
+.avatar { width: 34px; height: 34px; border-radius: 10px; background: rgba(59,130,246,.12); color: #3B82F6; display: flex; align-items: center; justify-content: center; font-weight: 700; }
+.name { font-weight: 600; color: #0f172a; }
+.muted { color: #64748b; font-size: 12px; display: flex; align-items: center; gap: 4px; }
+.pill { display: inline-block; min-width: 24px; text-align: center; padding: 2px 10px; border-radius: 999px; background: rgba(249,115,22,.12); color: #F97316; font-weight: 600; font-size: 12px; text-decoration: none; }
+.iconBtn, .iconBtnDanger { background: transparent; border: 1px solid transparent; border-radius: 8px; padding: 6px; cursor: pointer; color: #475569; }
+.iconBtn:hover { background: #eff6ff; color: #3B82F6; }
+.iconBtnDanger:hover { background: #fef2f2; color: #dc2626; }
+.state { padding: 48px 16px; text-align: center; color: #64748b; display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.stateError { padding: 32px 16px; text-align: center; color: #dc2626; }
+.linkBtn { background: none; border: none; color: #3B82F6; cursor: pointer; text-decoration: underline; }
+.backdrop { position: fixed; inset: 0; background: rgba(15,23,42,.4); display: flex; align-items: center; justify-content: center; z-index: 50; padding: 16px; animation: fade .15s ease; }
+.modal { background: #fff; border-radius: 16px; width: 100%; max-width: 560px; max-height: 90vh; overflow-y: auto; box-shadow: 0 20px 40px rgba(15,23,42,.2); }
+.modalHeader { display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; border-bottom: 1px solid #f1f5f9; }
+.modalHeader h2 { margin: 0; font-size: 18px; }
+.form { display: flex; flex-direction: column; gap: 12px; padding: 20px; }
+.form label { display: flex; flex-direction: column; gap: 4px; font-size: 12px; font-weight: 600; color: #475569; flex: 1; }
+.form input, .form textarea { border: 1px solid #e2e8f0; border-radius: 10px; padding: 8px 10px; font-size: 14px; font-family: inherit; }
+.row { display: flex; gap: 12px; }
+.formError { color: #dc2626; font-size: 13px; }
+.modalActions { display: flex; justify-content: flex-end; gap: 8px; }
+@keyframes fade { from { opacity: 0; } to { opacity: 1; } }
+@media (max-width: 640px) {
+  .row { flex-direction: column; }
+  .primaryBtn { width: 100%; justify-content: center; }
+  .searchWrap { max-width: none; }
+}

@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  --color-primary: #00D5D8;
+  --color-primary-dark: #00B3B6;
+  --color-primary-soft: rgba(0,213,216,.12);
+  --color-accent: #7C3AED;
+  --color-accent-soft: rgba(124,58,237,.18);
+  --color-bg: #0B1017;
+  --color-surface: #121A24;
+  --color-surface-2: #182230;
+  --color-text: #E6EDF3;
+  --color-text-muted: #8B98A9;
+  --color-muted: #8B98A9;
+  --color-border: #243041;
+  --color-success: #22C55E;
+  --color-warning: #F59E0B;
+  --color-danger: #F87171;
+  --radius-md: 12px;
+  --radius-lg: 12px;
+  --gradient-header-primary: linear-gradient(135deg, #00D5D8 0%, #0891B2 55%, #7C3AED 130%);
+  --gradient-panel-dark: linear-gradient(135deg, #0B1017 0%, #2E1065 100%);
+  --gradient-soft-surface: linear-gradient(180deg, #182230 0%, #121A24 100%);
+}
+
+html, body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4 { font-family: 'JetBrains Mono', ui-monospace, monospace; letter-spacing: -0.01em; color: var(--color-text); }
+a { color: var(--color-accent); }
+button, input, select, textarea { font-family: inherit; }
+
+/* Tailwind utility remaps for dark mode */
+.bg-white { background-color: var(--color-surface) !important; }
+.text-white { color: #0B1017; }
+aside .text-white, [style*="gradient"] .text-white, [style*="gradient"].text-white { color: #fff; }
+
+/* Dark-mode overrides for CSS-module components (layout untouched) */
+main [class*="_card__"], main [class*="_modal__"], main [class*="_drawer__"],
+main [class*="_panel__"], main [class*="_sheet__"]:not(:where(.print-keep)) {
+  background: var(--color-surface) !important;
+  border-color: var(--color-border) !important;
+  border-radius: 12px !important;
+  color: var(--color-text);
+  box-shadow: 0 8px 24px rgba(0,0,0,.35) !important;
+}
+main [class*="_card__"] { overflow: hidden; }
+main [class*="_toolbar__"], main [class*="_head__"], main [class*="_modalHeader__"] {
+  padding: 18px 22px !important; border-color: var(--color-border) !important;
+}
+main [class*="_title__"], main [class*="_name__"], main [class*="_bold__"], main [class*="_strong__"],
+main dd { color: var(--color-text) !important; }
+main [class*="_subtitle__"], main [class*="_muted__"], main [class*="_count__"], main [class*="_state__"],
+main [class*="_empty__"], main dt, main [class*="_label__"] { color: var(--color-muted) !important; }
+main [class*="_page__"] { gap: 28px !important; }
+
+main table th {
+  background: var(--color-surface-2) !important; color: var(--color-muted) !important;
+  padding: 14px 20px !important; border-color: var(--color-border) !important;
+}
+main table td { padding: 16px 20px !important; border-color: var(--color-border) !important; color: var(--color-text); }
+main table tbody tr:hover, main [class*="_row__"]:hover { background: rgba(0,213,216,.06) !important; }
+
+main input, main select, main textarea {
+  background: var(--color-surface-2) !important; color: var(--color-text) !important;
+  border: 1px solid var(--color-border) !important; border-radius: 12px !important;
+  padding-top: 10px; padding-bottom: 10px;
+}
+main input::placeholder, main textarea::placeholder { color: #5B6778; }
+main input:focus, main select:focus, main textarea:focus {
+  outline: none !important; border-color: var(--color-primary) !important;
+  box-shadow: 0 0 0 3px rgba(0,213,216,.2) !important;
+}
+
+main [class*="_primaryBtn__"] {
+  background: var(--color-primary) !important; color: #0B1017 !important;
+  border-radius: 12px !important; padding: 11px 20px !important;
+}
+main [class*="_primaryBtn__"]:hover { background: var(--color-primary-dark) !important; box-shadow: 0 0 0 3px rgba(0,213,216,.18); }
+main [class*="_secondaryBtn__"], main [class*="_outlineBtn__"] {
+  background: transparent !important; color: #C4B5FD !important;
+  border: 1px solid rgba(124,58,237,.55) !important; border-radius: 12px !important; padding: 10px 18px !important;
+}
+main [class*="_secondaryBtn__"]:hover, main [class*="_outlineBtn__"]:hover { background: var(--color-accent-soft) !important; }
+main [class*="_dangerBtn__"] {
+  background: transparent !important; color: #F87171 !important;
+  border: 1px solid rgba(248,113,113,.45) !important; border-radius: 12px !important;
+}
+main [class*="_iconBtn__"], main [class*="_iconBtnDanger__"] { color: var(--color-muted) !important; border-radius: 10px !important; }
+main [class*="_iconBtn__"]:hover { background: var(--color-accent-soft) !important; color: #C4B5FD !important; }
+main [class*="_iconBtnDanger__"]:hover { background: rgba(248,113,113,.12) !important; color: #F87171 !important; }
+main [class*="_link__"], main [class*="_linkBtn__"] { color: #A78BFA !important; }
+
+main [class*="_avatar__"] { background: rgba(0,213,216,.14) !important; color: var(--color-primary) !important; border-radius: 12px !important; }
+main [class*="_pill__"] { background: var(--color-accent-soft) !important; color: #C4B5FD !important; }
+main [class*="_drawerHeader__"] { background: var(--gradient-header-primary) !important; color: #fff; padding: 24px !important; }
+main [class*="_drawerHeader__"] * { color: #fff !important; }
+main [class*="_drawerBody__"], main [class*="_form__"] { padding: 24px !important; gap: 18px !important; }
+main [class*="_info__"] { border-color: var(--color-border) !important; border-radius: 12px !important; }
+main [class*="_invLink__"] { border-color: var(--color-border) !important; border-radius: 12px !important; }
+main [class*="_invLink__"]:hover { border-color: var(--color-accent) !important; }
+[class*="_backdrop__"] { background: rgba(0,0,0,.6) !important; }
+
+/* Status badges */
+main [class*="_badge__"], main [class*="_status__"] { background: rgba(139,152,169,.15) !important; color: #CBD5E1 !important; }
+main [class*="_sent__"], main [class*="_s_sent__"] { background: rgba(0,213,216,.15) !important; color: #5EEAD4 !important; }
+main [class*="_paid__"], main [class*="_s_paid__"] { background: rgba(34,197,94,.15) !important; color: #4ADE80 !important; }
+main [class*="_overdue__"], main [class*="_s_overdue__"] { background: rgba(245,158,11,.15) !important; color: #FBBF24 !important; }
+main [class*="_cancelled__"], main [class*="_s_cancelled__"] { background: rgba(248,113,113,.15) !important; color: #F87171 !important; }
+
+/* Invoice preview accents */
+main [class*="_top__"] { border-bottom-color: var(--color-primary) !important; }
+main [class*="_brand__"] { color: var(--color-primary) !important; font-family: 'JetBrains Mono', monospace !important; }
+main [class*="_grand__"] { color: #A78BFA !important; border-top-color: var(--color-border) !important; }
+main [class*="_foot__"] { border-top-color: var(--color-border) !important; }
+
+@layer components {
+  .card { @apply bg-white border border-line rounded-card shadow-card; }
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-[12px] px-5 py-2.5 text-sm font-semibold transition-colors duration-150 disabled:opacity-50 disabled:cursor-not-allowed; }
+  .btn-primary { @apply btn bg-primary text-canvas hover:bg-primary-dark; }
+  .btn-accent { @apply btn bg-accent text-white hover:opacity-90; }
+  .btn-outline { @apply btn border border-accent/50 bg-transparent text-ink hover:bg-accent-soft; }
+  .input { @apply w-full rounded-[12px] border border-line bg-canvas px-3.5 py-2.5 text-sm text-ink outline-none focus:border-primary focus:ring-2 focus:ring-primary/20; }
+  .label { @apply block text-xs font-semibold uppercase tracking-wide text-muted mb-1.5; }
+}
+
+@media print {
+  :root { color-scheme: light; }
+  html, body { background: #fff !important; color: #0f172a !important; }
+  main [class*="_sheet__"] { background: #fff !important; color: #1e293b !important; box-shadow: none !important; }
+  main [class*="_sheet__"] * { color: #1e293b !important; }
+  .no-print { display: none !important; }
+  main { padding: 0 !important; margin: 0 !important; }
+}

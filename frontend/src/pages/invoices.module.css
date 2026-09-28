@@ -1,0 +1,8 @@
+.page { display: flex; flex-direction: column; gap: 20px; }
+.header { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+.title { margin: 0; font-size: 1.5rem; font-weight: 700; color: #0f172a; }
+.subtitle { margin: 4px 0 0; color: #64748b; font-size: 0.875rem; }
+.card { background: #fff; border: 1px solid #e2e8f0; border-radius: 14px; box-shadow: 0 1px 3px rgba(15,23,42,.05); overflow: hidden; }
+.state { padding: 40px; text-align: center; color: #64748b; }
+.error { padding: 24px; text-align: center; color: #b91c1c; }
+.retry { margin-left: 8px; border: 1px solid #3b82f6; color: #3b82f6; background: #fff; border-radius: 8px; padding: 4px 12px; cursor: pointer; }

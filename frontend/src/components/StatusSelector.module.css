@@ -1,0 +1,4 @@
+.wrap { display: flex; align-items: center; gap: 6px; }
+.label { font-size: 12px; color: #64748b; }
+.select { padding: 8px 10px; border-radius: 10px; border: 1px solid #cbd5e1; background: #fff; font-size: 14px; }
+.select:focus { outline: 2px solid #3B82F6; outline-offset: 1px; }

@@ -1,0 +1,12 @@
+.page {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 8px 0 40px;
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  color: #e5e7eb;
+}
+.header { margin-bottom: 28px; }
+.back { color: #a78bfa; font-size: 13px; text-decoration: none; }
+.back:hover { color: #c4b5fd; }
+.title { margin: 12px 0 6px; font-size: 24px; font-weight: 700; color: #f9fafb; }
+.subtitle { margin: 0; color: #9ca3af; font-size: 14px; }

@@ -1,0 +1,126 @@
+[
+  {
+    "auth_required": false,
+    "method": "GET",
+    "path": "/api/health",
+    "response_shape": {
+      "status": "string"
+    },
+    "sample_body": null,
+    "sample_params": {},
+    "success_status": 200
+  },
+  {
+    "auth_required": false,
+    "method": "GET",
+    "path": "/api/dashboard/stats",
+    "response_shape": {
+      "draftCount": "int",
+      "overdueCount": "int",
+      "paidCount": "int",
+      "recentInvoices": "array",
+      "sentCount": "int",
+      "totalClients": "int",
+      "totalInvoices": "int",
+      "totalOutstanding": "decimal",
+      "totalPaid": "decimal"
+    },
+    "sample_body": null,
+    "sample_params": {},
+    "success_status": 200
+  },
+  {
+    "auth_required": false,
+    "method": "GET",
+    "path": "/api/clients",
+    "response_shape": "array",
+    "sample_body": null,
+    "sample_params": {},
+    "success_status": 200
+  },
+  {
+    "auth_required": false,
+    "method": "GET",
+    "path": "/api/clients/:id",
+    "response_shape": {
+      "address": "string?",
+      "company": "string?",
+      "createdAt": "datetime",
+      "email": "string?",
+      "id": "int",
+      "invoices": "array",
+      "name": "string",
+      "notes": "string?",
+      "phone": "string?",
+      "taxId": "string?",
+      "updatedAt": "datetime"
+    },
+    "sample_body": null,
+    "sample_params": {
+      "id": 1
+    },
+    "success_status": 200
+  },
+  {
+    "auth_required": false,
+    "method": "GET",
+    "path": "/api/invoices",
+    "response_shape": "array",
+    "sample_body": null,
+    "sample_params": {},
+    "success_status": 200
+  },
+  {
+    "auth_required": false,
+    "method": "GET",
+    "path": "/api/invoices/next-number",
+    "response_shape": {
+      "invoiceNumber": "string"
+    },
+    "sample_body": null,
+    "sample_params": {},
+    "success_status": 200
+  },
+  {
+    "auth_required": false,
+    "method": "GET",
+    "path": "/api/invoices/:id",
+    "response_shape": {
+      "client": "object",
+      "clientId": "int?",
+      "createdAt": "datetime",
+      "currency": "string",
+      "discount": "decimal",
+      "dueDate": "datetime?",
+      "id": "int",
+      "invoiceNumber": "string",
+      "issueDate": "datetime",
+      "items": "array",
+      "notes": "string?",
+      "status": "string",
+      "subtotal": "decimal",
+      "taxAmount": "decimal",
+      "taxRate": "decimal",
+      "terms": "string?",
+      "total": "decimal",
+      "updatedAt": "datetime"
+    },
+    "sample_body": null,
+    "sample_params": {
+      "id": 1
+    },
+    "success_status": 200
+  },
+  {
+    "auth_required": false,
+    "method": "GET",
+    "path": "/api/invoices/:id/status",
+    "request_body": null,
+    "response_shape": null,
+    "sample_body": null,
+    "sample_params": {
+      "id": 1
+    },
+    "success_status": 200
+  }
+]
