@@ -133,7 +133,7 @@ export default function Clients() {
       <div className={styles.header}>
         <div>
           <h1 className={styles.title}>Clients</h1>
-          <p className={styles.subtitle}>Manage your clients and billing contacts.</p>
+          <p className={styles.subtitle}>Maintain the directory of people and companies you bill.</p>
         </div>
         <button className={styles.primaryBtn} onClick={openCreate}>
           <Plus size={16} /> Add Client

@@ -4,6 +4,7 @@ import StatCards from '@/components/StatCards';
 import RecentInvoicesTable from '@/components/RecentInvoicesTable';
 import OutstandingSummary from '@/components/OutstandingSummary';
 import QuickActions from '@/components/QuickActions';
+import MonthlyTotalsChart, { type MonthlyTotal } from '@/components/MonthlyTotalsChart';
 import styles from './Dashboard.module.css';
 
 export interface RecentInvoice {
@@ -26,6 +27,7 @@ export interface DashboardStats {
   totalInvoices: number;
   totalOutstanding: number;
   totalPaid: number;
+  monthlyTotals?: MonthlyTotal[];
 }
 
 export default function Dashboard() {
@@ -70,6 +72,7 @@ export default function Dashboard() {
       {!loading && !error && stats && (
         <>
           <StatCards stats={stats} />
+          <MonthlyTotalsChart data={stats.monthlyTotals ?? []} />
           <div className={styles.grid}>
             <div className={styles.main}>
               <RecentInvoicesTable invoices={stats.recentInvoices ?? []} />

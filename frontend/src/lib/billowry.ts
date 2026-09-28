@@ -416,5 +416,21 @@ export async function dashboardStats() {
     totalOutstanding: sum((i) => i.status === 'sent' || i.status === 'overdue'),
     totalPaid: sum((i) => i.status === 'paid'),
     recentInvoices: recent,
+    monthlyTotals: (() => {
+      const now = new Date();
+      const months: { month: string; paid: number; outstanding: number }[] = [];
+      for (let k = 11; k >= 0; k--) {
+        const d = new Date(now.getFullYear(), now.getMonth() - k, 1);
+        months.push({ month: `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}`, paid: 0, outstanding: 0 });
+      }
+      for (const i of invoices) {
+        const s = String(iso(i.issueDate) || '').slice(0, 7);
+        const m = months.find((x) => x.month === s);
+        if (!m) continue;
+        if (i.status === 'paid') m.paid += Number(i.total || 0);
+        else if (i.status === 'sent' || i.status === 'overdue') m.outstanding += Number(i.total || 0);
+      }
+      return months.map((m) => ({ ...m, paid: round2(m.paid), outstanding: round2(m.outstanding) }));
+    })(),
   };
 }
