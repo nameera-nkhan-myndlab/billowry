@@ -135,9 +135,6 @@ export default function Clients() {
           <h1 className={styles.title}>Clients</h1>
           <p className={styles.subtitle}>Manage the directory of people and companies</p>
         </div>
-        <button className={styles.primaryBtn} onClick={openCreate}>
-          <Plus size={16} /> Add Client
-        </button>
       </div>
 
       <div className={styles.card}>
