@@ -7,6 +7,10 @@ import QuickActions from '@/components/QuickActions';
 import MonthlyTotalsChart, { type MonthlyTotal } from '@/components/MonthlyTotalsChart';
 import styles from './Dashboard.module.css';
 
+function Preview({ html }: { html: string }) {
+  return <div dangerouslySetInnerHTML={{ __html: html }} />;
+}
+
 export interface RecentInvoice {
   clientName?: string | null;
   currency: string;
